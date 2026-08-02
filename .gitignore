@@ -1,0 +1,64 @@
+# ==========================
+# Build Output
+# ==========================
+out/
+bin/
+build/
+
+# ==========================
+# Object Files
+# ==========================
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+
+# ==========================
+# CMake
+# ==========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+
+# If you want to keep shared settings, use:
+# .vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+
+# ==========================
+# CLion / JetBrains
+# ==========================
+.idea/
+
+# ==========================
+# macOS
+# ==========================
+.DS_Store
+
+# ==========================
+# Linux
+# ==========================
+*~
+.cache/
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Temporary Files
+# ==========================
+*.tmp
+*.swp
+*.swo
