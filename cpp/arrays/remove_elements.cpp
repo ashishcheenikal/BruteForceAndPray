@@ -2,43 +2,40 @@
 #include <vector>
 using namespace std;
 
-int removeDuplicates(vector<int> &nums)
+int removeElement(vector<int> &nums, int val)
 {
     int n = nums.size();
 
     int k = 0;
     for (int i = 0; i < n; i++)
     {
-        if (nums[i] > nums[k])
+        if (nums[i] != val)
         {
-            k++;
             nums[k] = nums[i];
+            k++;
         }
     }
 
-    for (const auto &x : nums)
-    {
-        cout << x << " ";
-    }
-
-    cout << '\n';
-
-    return k + 1;
+    return k;
 }
 
 int main()
 {
     int t;
     cin >> t;
+
     while (t--)
     {
-        int n;
+        int n, val;
         cin >> n;
-        vector<int> nums(n);
+
+        vector<int> arr(n);
         for (int i = 0; i < n; i++)
         {
-            cin >> nums[i];
+            cin >> arr[i];
         }
-        cout << removeDuplicates(nums) << '\n';
+
+        cin >> val;
+        cout << removeElement(arr, val) << '\n';
     }
 }
