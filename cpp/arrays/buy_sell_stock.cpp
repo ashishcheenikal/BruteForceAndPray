@@ -13,14 +13,14 @@ int maxProfit(vector<int> &prices)
     {
         int profit = prices[i] - smallest;
 
-        if (prices[i] < smallest)
-        {
-            smallest = prices[i];
-        }
-
         if (profit > maxProfit)
         {
             maxProfit = profit;
+        }
+
+        if (prices[i] < smallest)
+        {
+            smallest = prices[i];
         }
     }
 
