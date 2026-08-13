@@ -38,6 +38,8 @@ int missingNumber1(vector<int> &nums)
     //     expectedSum += i;
     // }
 
+    // !! We can also solve this by using Bitwise XOR.
+
     // find the sum using formula
     expectedSum = (n * (n + 1)) / 2;
 
