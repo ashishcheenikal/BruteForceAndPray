@@ -8,14 +8,12 @@ using ll = long long;
 bool isPowerOfTwo(int n)
 {
 
-    cout << n << '\n';
-
     if (n == 2 || n == 1)
     {
         return true;
     }
 
-    return (n % 2 != 0) ? false : isPowerOfTwo(n / 2);
+    return (n % 2 != 0 || n < 1) ? false : isPowerOfTwo(n / 2);
 }
 
 int main()
