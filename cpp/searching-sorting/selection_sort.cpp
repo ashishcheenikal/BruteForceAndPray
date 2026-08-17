@@ -3,34 +3,28 @@ using namespace std;
 
 using ll = long long;
 
-void bubbleSort(vector<int> &arr)
+void selectionSort(vector<int> &arr)
 {
-    int n = arr.size();
 
+    int n = arr.size();
     if (n <= 1)
     {
         return;
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        bool swapped = false;
-
-        for (int j = 0; j < n - 1 - i; j++)
-        {
-            if (arr[j] > arr[j + 1])
+    for (int i = 0; i < n - 1; i++)
+    { // n-1 because last number will be automatically sorted(swapped).
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+        { // i + 1 because the comparison starts from next element
+            if (arr[j] < arr[min])
             {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                swapped = true;
+                min = j;
             }
         }
-
-        if (!swapped)
-        {
-            break;
-        }
+        int temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
     }
 }
 
@@ -46,22 +40,16 @@ int main()
     {
         int n;
         cin >> n;
-
         vector<int> arr(n);
-
         for (int i = 0; i < n; i++)
         {
             cin >> arr[i];
         }
-
-        bubbleSort(arr);
-
+        selectionSort(arr);
         for (const auto &x : arr)
         {
             cout << x << " ";
         }
-
-        cout << '\n';
     }
 
     return 0;
