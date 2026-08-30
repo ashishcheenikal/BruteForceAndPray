@@ -9,6 +9,28 @@ struct Node
     Node *next;
 };
 
+Node *insert(Node *&head, int pos, int value)
+{
+    Node *newNode = new Node;
+    newNode->data = value;
+    newNode->next = nullptr;
+
+    if (pos == 0)
+    {
+        newNode->next = head;
+        head = newNode;
+        return head;
+    }
+    Node *ptr = head;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        ptr = ptr->next;
+    }
+    newNode->next = ptr->next;
+    ptr->next = newNode;
+    return head;
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -41,6 +63,31 @@ int main()
     delete third;
     delete second;
     delete first;
+    delete current;
+
+    Node *head = new Node;
+    head->data = -10;
+    head->next = nullptr;
+    Node *ptr = head;
+    int n = 10;
+    for (int i = 1; i <= n; i++)
+    {
+        Node *temp = new Node;
+        temp->data = i * 10;
+        temp->next = nullptr;
+        ptr->next = temp;
+        ptr = ptr->next;
+    }
+
+    insert(head, 3, 13452345);
+    insert(head, 0, 45674567);
+
+    ptr = head;
+    while (ptr != nullptr)
+    {
+        cout << "T: " << ptr->data << '\n';
+        ptr = ptr->next;
+    }
 
     return 0;
 }
